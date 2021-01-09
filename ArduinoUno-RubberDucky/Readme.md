@@ -12,7 +12,31 @@
  
  ## Follow the steps below in order
  
+ 1) Clone the Repo or download the resources from this [subfolder](https://github.com/nigamelastic/ArduinoPublicProjects/tree/main/ArduinoUno-RubberDucky)
+ 2) Download Boot-loader Sketch(INO) from reference [URL](https://github.com/NicoHood/HoodLoader2/blob/master/avr/examples/Installation_Sketch/Installation_Sketch.ino)
+ 3) Open the INO file in the Arduino IDE
+ 4) Connect a Plain(no other wire connection) Arduino UNO to Laptop via USB cable
+ 5) In Arduino IDE, Select Tools->Board->Arduino/Genuino UNO
+ 6) In Arduino IDE, Select Tools->Port->ttyACM0 [Yours could be different. Use dmesg command to identify]
+ 7) Verify and Upload the Code and Wait for the message “Upload Done” 
+ 8) Disconnect the USB cable 
+ 9) Make the cable connection as per this [diagram](https://github.com/nigamelastic/ArduinoPublicProjects/blob/main/ArduinoUno-RubberDucky/arduino_flash.png?raw=true)
+ 10) Connect the USB cable again back to laptop and the boot loader will install by itself , Wait for 1 to 2 min till the boot-loader get installed
+ 11) once installation is finished disconnect USB cable from the laptop and disconnect all the jump wire and make the board plain
+
+We successfully finished installing the HID bootloader now we can create our sketches and use arduino as usb HID. To program your own keystrokes and follow the steps below:
+
+1) Connect the Board to laptop via USB cable
+2( Navigate File->Preference->Settings->Additional Boards Manager URLs
+3) Enter this [URL](https://raw.githubusercontent.com/NicoHood/HoodLoader2/master/package_NicoHood_HoodLoader2_index.json) and click OK
+4) Navigate Tools->Board->Boards Manager
+5) Search for “HoodLoader2” and install the latest version
+6) Navigate to Sketch->Include Library->Add a .ZIP Library
+7) Downloaded this [HID-Library](https://github.com/NicoHood/HID/archive/master.zip) as input
+8) Now just create your sketch and upload it, if you know the USB rubber ducky syntax you can use this [python file](https://github.com/nigamelastic/ArduinoPublicProjects/blob/main/ArduinoUno-RubberDucky/USBRubberDuckyToArduino.py) to convert it to an arduino sketch, or you can use this [sketch](https://github.com/nigamelastic/ArduinoPublicProjects/blob/main/ArduinoUno-RubberDucky/ArduinoDuckyExample.ino) as reference and create your own.
  
+
+
  
  
  ## References
